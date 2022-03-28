@@ -21,7 +21,7 @@ FROM Products
 WHERE UnitPrice <= "50"
 AND UnitPrice >= "15";
 
-/*5 Productos sin precio*/
+/*5 Productos SIN precio*/
 SELECT * 
 FROM Products
 WHERE UnitPrice is NULL;
@@ -32,11 +32,12 @@ FROM Products
 WHERE ProductID <= "10"
 AND UnitPrice <= "15";
 
-/*7 Cambiar operadores*/
+/*7 Productos CON precio*/
 SELECT *
 FROM Products 
 WHERE UnitPrice is NOT NULL;
 
 /*8 Países a los que vendemos*/
 SELECT Orders
-FROM Products
+FROM Territories
+WHERE QuantityPerUnit = 

@@ -38,6 +38,17 @@ OFFSET 5;
 SELECT CategoryName AS NombreDeCategoria
 FROM Categories;
 
-/* 8 Añadir 5 días de retraso a la fecha de envío*/
-SELECT DATE_ADD("ShippedDate", INTERVAL 5 DAY) AS FechaRetrasada
+/*8 Envios con retraso*/
+SELECT ShippedDate, DATE_ADD(ShippedDate, INTERVAL 5 DAY) AS ShippedDate_5_days
 FROM Orders;
+
+/*9 Productos rentables*/
+USE northwind; 
+SELECT ProductID
+FROM Products
+WHERE UnitPrice BETWEEN 15 AND 50;
+
+/*10 Productos precios exactos*/
+SELECT ProductID
+FROM Products
+WHERE UnitPrice IN (18, 19, 20);
